@@ -1,0 +1,51 @@
+.nav-container {
+    width: fit-content;
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(50%);
+    left: 1rem;
+    animation: show-up 0.5s ease;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    height: 30rem;
+    gap: 1rem;
+    justify-content: space-between;
+}
+@keyframes show-up {
+    from{
+        opacity: 0;
+        left: -4rem;
+    }
+    to{
+        opacity: 1;
+        left: 1rem;
+    }
+    
+}
+@media (max-width: 1000px) {
+    .nav-container{
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        transform: translateY(0);
+    }
+    .navbar {
+        flex-direction: row;
+        height: 4rem;
+    }
+    @keyframes show-up {
+        from{
+            opacity: 0;
+            bottom: -7rem;
+        }
+        to{
+            opacity: 1;
+            bottom: 0;
+        }
+        
+    }
+}
