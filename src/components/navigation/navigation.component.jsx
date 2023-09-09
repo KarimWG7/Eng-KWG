@@ -1,27 +1,50 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
 import classes from "./navigation.module.css";
 import Card from "../card/card.component";
 
-const Navigation = ({ isNavOpened }) => {
+import { BiUser } from "react-icons/bi";
+import { BiPencil } from "react-icons/bi";
+import { BiMessageSquareDots } from "react-icons/bi";
+import { AiOutlineHome } from "react-icons/ai";
+import { AiOutlineProfile } from "react-icons/ai";
+
+const Navigation = () => {
   return (
-    <nav className={`${classes["nav-container"]} ${!isNavOpened && "hidden"}`}>
+    <nav className={classes["nav-container"]}>
       <Card>
         <ul className={classes.navbar}>
           <li>
-            <Link to="/blog">Blog</Link>
+            <Link className={classes["nav-link"]} to="/">
+              <AiOutlineHome className={classes["nav-icon"]} />
+              <span>Home</span>
+            </Link>
           </li>
           <li>
-            <Link to="/portfolio">Portfolio</Link>
+            <Link className={classes["nav-link"]} to="/about">
+              <BiUser className={classes["nav-icon"]} />
+              <span>About</span>
+            </Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link className={classes["nav-link"]} to="/blog">
+              <BiPencil className={classes["nav-icon"]} />
+              <span>Blog</span>
+            </Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link className={classes["nav-link"]} to="/resume">
+              <AiOutlineProfile className={classes["nav-icon"]} />
+              <span>Resume</span>
+            </Link>
           </li>
           <li>
-            <Link to="/resume">Resume</Link>
+            <Link className={classes["nav-link"]} to="/contact">
+              <BiMessageSquareDots className={classes["nav-icon"]} />
+              <span>Contact</span>
+            </Link>
           </li>
         </ul>
       </Card>

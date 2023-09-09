@@ -1,9 +1,12 @@
 :root {
-  --peach: #f7c59fff;
-  --beige: #efefd0ff;
-  --polynesian-blue: #004e89ff;
-  --orange-crayola: #ff6b35ff;
-  --lapis-lazuli: #1a659eff;
+--main-color: #0d3b66;
+--main-color-dark: #082744;
+/* --bg-color: #fffae8; */
+--bg-color: #fff;
+--btn-color: #f95738;
+--btn-color-dark: #e74828;
+--shadow: rgba(13, 59, 102, 0.3);
+
 }
 
 * {
@@ -16,17 +19,19 @@
 html {
   font-size: 62.5%
 }
-
+ 
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
-  min-width: 100vw;
-  position: relative;
+  /* height: 100vh; */
+  /* max-height: 100vh; */
+  max-width: 100vw;
+  color: var(--main-color);
+  background-color: #eee;
+  overflow-x: hidden;
 }
 
 code {
@@ -40,4 +45,8 @@ a {
 
 .hidden {
   display: none;
+}
+.container  {
+  max-width: 100rem;
+  margin: auto;
 }
