@@ -1,11 +1,13 @@
 import React from "react";
-import { POST } from "../../posts";
+// import { POST } from "../../posts";
 import Card from "../card/card.component";
 
-const PostPreview = () => {
+import classes from "./post-preview.module.css"
+
+const PostPreview = ({post}) => {
   return (
-    <section>
-      <Card dangerouslySetInnerHTML={{ __html: POST.content }}></Card>
+    <section className={classes.PostPreview}>
+      <Card dangerouslySetInnerHTML={{ __html: post.content }}></Card>
     </section>
   );
 };

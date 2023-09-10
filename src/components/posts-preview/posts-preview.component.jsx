@@ -1,18 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import PostCard from "../post-card/post-card.component";
-import POSTS from "../../posts";
 import classes from "./posts-preview.module.css";
-import Card from "../card/card.component";
 
-const PostsPreview = () => {
+const PostsPreview = ({ posts }) => {
   return (
-      <ul className={classes["posts-container"]}>
-        {POSTS.map((post) => {
-          return <PostCard key={post.id} post={post} />;
-        })}
-      </ul>
+    <ul className={classes["posts-container"]}>
+      {posts.map((post) => {
+        return <PostCard key={post.id} post={post} />;
+      })}
+    </ul>
   );
 };
 

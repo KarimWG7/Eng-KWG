@@ -9,28 +9,12 @@ import About from "./routes/About/about.component";
 import Contact from "./routes/Contact/contact.component";
 import Header from "./components/header/header.component";
 import "./app.css";
+import { getLatestPosts } from "./utils/blogger";
 
 const App = () => {
-  // const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState([]);
   const [isNavOpened, setIsNavOpened] = useState(true);
-  // useEffect(() => {
-  //   const blogId = process.env.REACT_APP_BLOGGER_BLOG_ID;
-  //   const ApiKey = process.env.REACT_APP_BLOGGER_API_KEY;
-  //   const bloggerUrl = "https://www.googleapis.com/blogger/v3/blogs/" + blogId;
-  //   const params = {
-  //     key: ApiKey,
-  //     fetchImages: true,
-  //     fields: "items(kind,id,published,title,images,labels)",
-  //   };
-  //   const fetchUrl = bloggerUrl + "/posts?" + new URLSearchParams(params);
-  //   console.log(fetchUrl);
-  //   const getBlogs = async () => {
-  //     const res = await fetch(fetchUrl);
-  //     const data = await res.json();
-  //     console.log(data);
-  //   };
-  //   getBlogs();
-  // }, []);
+
   return (
     <div className="app">
       <main className="container">
