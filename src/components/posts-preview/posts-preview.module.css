@@ -1,7 +1,9 @@
 .posts-container {
-    padding: 1rem;
+    padding: 2rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(25rem , 1fr));
     gap: 2rem;
     margin-bottom: 10rem;
+    background-color: var(--bg-color);
+    border-radius: 10px;
 }

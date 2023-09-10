@@ -17,7 +17,7 @@ const Header = ({ setIsNavOpen, isNavOpen }) => {
   };
   return (
     <header className={classes.header}>
-      <Link to="/contact">Hire Me</Link>
+      <Link className={classes.ctab} to="/contact">Hire Me</Link>
       <ul className={classes.social}>
         <li>
           <a target="_blank" href="https://mostaql.com/u/karim_ghanim">

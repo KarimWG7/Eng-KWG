@@ -2,7 +2,7 @@
     width: fit-content;
     position: fixed;
     bottom: 50vh;
-    left: 1.5rem;
+    left: 2rem;
     transform: translateY(50%);
     z-index: 10;
     animation: navMove 0.3s ease;
@@ -44,12 +44,14 @@ border-radius: 50%;
 @media (max-width: 1000px) {
     .nav-container {
         bottom: 0;
+        transform: translateY(0);
         left: 0;
         width: 100%;
         height: fit-content;
     }
     .navbar {
         flex-direction: row;
+        justify-content: space-around;
 
     }
     @keyframes navMove {

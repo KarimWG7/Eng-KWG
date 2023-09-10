@@ -1,9 +1,10 @@
 :root {
---main-color: #0d3b66;
+--main-color: hsl(209, 77%, 23%);
 --main-color-dark: #082744;
 /* --bg-color: #fffae8; */
 --bg-color: #fff;
---btn-color: #f95738;
+--btn-color: #32cafd;
+/* --btn-color: #f95738; */
 --btn-color-dark: #e74828;
 --shadow: rgba(13, 59, 102, 0.3);
 
@@ -49,4 +50,10 @@ a {
 .container  {
   max-width: 100rem;
   margin: auto;
+}
+button {
+  border: none;
+  background-color: none;
+  outline: none;
+  cursor: pointer;
 }

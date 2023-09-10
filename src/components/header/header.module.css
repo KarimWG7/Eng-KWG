@@ -10,6 +10,7 @@
     left: 0;
     width: 100%;
     z-index: 10;
+    margin-bottom: 7rem;
 }
 .mostaql {
     display: block;
@@ -32,4 +33,15 @@
     font-size: 2.4rem;
     display: flex;
     gap: 2rem;
+}
+.ctab {
+    font-size: 2rem;
+    color: var(--bg-color);
+    background-color: var(--main-color);
+    padding: 0.5rem 1rem ;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.ctab:hover {
+background-color: var(--main-color-dark);
 }

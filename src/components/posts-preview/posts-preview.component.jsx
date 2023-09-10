@@ -8,13 +8,11 @@ import Card from "../card/card.component";
 
 const PostsPreview = () => {
   return (
-    // <Card>
-    <ul className={classes["posts-container"]}>
-      {POSTS.map((post) => {
-        return <PostCard key={post.id} post={post} />;
-      })}
-    </ul>
-    // </Card>
+      <ul className={classes["posts-container"]}>
+        {POSTS.map((post) => {
+          return <PostCard key={post.id} post={post} />;
+        })}
+      </ul>
   );
 };
 
