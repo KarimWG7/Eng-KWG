@@ -20,7 +20,6 @@ export const getLatestPosts = async () => {
   };
   const fetchUrl = bloggerUrl + "/posts?" + new URLSearchParams(params);
   const data = await fetchData(fetchUrl);
-  console.log();
   return data.items;
 };
 

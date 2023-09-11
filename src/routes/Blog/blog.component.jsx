@@ -1,19 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import classes from "./blog.module.css";
-import AboutBlog from "../../components/about-blog/about-blog.compponent";
 import PostsPreview from "../../components/posts-preview/posts-preview.component";
-import { getCategoryPosts } from "../../utils/blogger";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectBlogCategories,
+  selectBlogCategoriesPosts,
+} from "../../store/blogCategoriesSlice/blogCatgeories.selector";
+import { getCategoryPostsAsync } from "../../store/blogCategoriesSlice/blogCategories.reducer";
 
 const LABELS = ["فيزياء", "كيمياء", "رياضيات", "الكترونيات"];
 
 const Blog = () => {
-  const [posts, setPosts] = useState([]);
+  const dispatch = useDispatch();
+  const categories = useSelector(selectBlogCategories);
+  const blogCategoriesPosts = useSelector(selectBlogCategoriesPosts);
+  const posts = blogCategoriesPosts["كيمياء"] || [];
   useEffect(() => {
-    const getData = async () => {
-      const posts = await getCategoryPosts("كيمياء");
-      setPosts(posts);
-    };
-    getData();
+    if (posts.length > 0) return;
+    dispatch(getCategoryPostsAsync("كيمياء"));
   }, []);
   return (
     <>

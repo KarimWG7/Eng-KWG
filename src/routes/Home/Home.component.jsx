@@ -1,21 +1,21 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import AboutBlog from "../../components/about-blog/about-blog.compponent";
 import PostsPreview from "../../components/posts-preview/posts-preview.component";
-import { getLatestPosts } from "../../utils/blogger";
+import { useDispatch, useSelector } from "react-redux";
+import { getData } from "../../store/postsSlice/posts.reducer";
+import { selectPosts } from "../../store/postsSlice/posts.selector";
 
 const Home = () => {
-  const [posts, setPosts] = useState([]);
+  const dispatch = useDispatch();
+  const posts = useSelector(selectPosts);
   useEffect(() => {
-    const getData = async () => {
-      const data = await getLatestPosts();
-      setPosts(data);
-    };
-    getData();
+    if (posts.length > 0) return;
+    dispatch(getData());
   }, []);
   return (
     <main className="container">
       <AboutBlog />
-      <PostsPreview posts={posts}/>;
+      <PostsPreview posts={posts} />;
     </main>
   );
 };
