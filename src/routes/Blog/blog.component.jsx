@@ -27,7 +27,7 @@ const Blog = () => {
           {LABELS.map((label) => {
             return (
               <li
-                className={label === "رياضيات" ? classes.active : ""}
+                className={label === "كيمياء" ? classes.active : ""}
                 key={label}
               >
                 <button>{label}</button>

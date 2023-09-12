@@ -10,34 +10,15 @@
     z-index: 10;
     padding: 0.5rem 1rem;
     background-color: #eee;
+    border-bottom: 2px solid transparent;
+    transition: border 0.3s ease;
+}
+.classification li:hover, .classification li.active {
+    border-bottom-color: var(--main-color);
 }
 
 .classification li button {
     font-size: 2rem;
     color: var(--main-color);
-    padding: 0.5rem 1rem;
     position: relative;
-
-}
-.classification li button::before, .classification li button::after {
-    content: '';
-    width:calc(100% + 2px);
-    height: 0;
-    background-color: var(--main-color);
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 0.3s linear;
-    z-index: -1;
-}
-.classification li:hover button::before, .classification li.active button::before {
-    height: calc(50% + 1px);
-    top: -1px;
-    transform: translate(-50%,0);
-}
-.classification li:hover button::after, .classification li.active button::after {
-    height: calc(50% + 1px);
-    top: 50%  ;
-    transform: translate(-50%, 0);
 }

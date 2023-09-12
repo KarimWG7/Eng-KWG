@@ -5,7 +5,11 @@ const bloggerUrl = "https://www.googleapis.com/blogger/v3/blogs/" + blogId;
 const fetchData = async (url) => {
   try {
     const res = await fetch(url);
-    if (!res.ok) throw new Error("Something went wrong");
+    if (!res.ok)
+      throw new Error({
+        statusCode: res.status,
+        message: "Something went wrong while fetching the posts!",
+      });
     return await res.json();
   } catch (error) {
     throw new Error(error);

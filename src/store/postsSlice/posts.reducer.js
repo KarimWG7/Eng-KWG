@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getLatestPosts } from "../../utils/blogger";
+import { notificationActions } from "../notificationSlice/notification.reducer";
 
 const postsInitialState = {
-  error: {},
+  error: "",
   isLoading: false,
   posts: [],
 };
@@ -35,7 +36,13 @@ export const getData = () => async (dispatch) => {
     const data = await getLatestPosts();
     dispatch(postsActions.getPostsSuccess(data));
   } catch (error) {
-    console.log(error);
-    dispatch(postsActions.getPostsFailed(error));
+    console.log(error)
+    dispatch(postsActions.getPostsFailed(error.message));
+    dispatch(
+      notificationActions.showNotification({
+        message: error.message,
+        statusCode: 400,
+      })
+    );
   }
 };

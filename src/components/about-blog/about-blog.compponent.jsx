@@ -9,7 +9,7 @@ const AboutBlog = () => {
         <div className={classes["logo-container"]}>
           <img src={logo} alt="blog logo" />
         </div>
-        <h1>About Blog</h1>
+        <h1>Eng.KWG</h1>
         <p>
           A Blog Of Programming For Web Developers
         </p>
