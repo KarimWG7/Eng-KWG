@@ -7,3 +7,6 @@
     background-color: var(--bg-color);
     border-radius: 10px;
 }
+.posts-container .spinner{
+    grid-column: 1/4 ;
+}

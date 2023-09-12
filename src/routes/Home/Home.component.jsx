@@ -8,6 +8,7 @@ import { selectPosts } from "../../store/postsSlice/posts.selector";
 const Home = () => {
   const dispatch = useDispatch();
   const posts = useSelector(selectPosts);
+  const isLoading = useSelector((state) => state.posts.isLoading);
   useEffect(() => {
     if (posts.length > 0) return;
     dispatch(getData());
@@ -15,7 +16,7 @@ const Home = () => {
   return (
     <main className="container">
       <AboutBlog />
-      <PostsPreview posts={posts} />;
+      <PostsPreview posts={posts} isLoading={isLoading} />;
     </main>
   );
 };

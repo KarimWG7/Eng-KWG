@@ -2,6 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getCategoryPosts } from "../../utils/blogger";
 
 const blogCategoriesInitialState = {
+  error: {},
+  isLoading: false,
   categories: [],
   postsOfCategories: {},
 };
@@ -13,9 +15,17 @@ const blogCategoriesSlice = createSlice({
     getBlogcategories(state, action) {
       state.categories = action.payload;
     },
-    getCategoryPosts(state, action) {
+    getCategoryPostsStart(state) {
+      state.isLoading = true;
+    },
+    getCategoryPostsSuccess(state, action) {
       const { category, posts } = action.payload;
       state.postsOfCategories[category] = posts;
+      state.isLoading = false;
+    },
+    getCategoryPostsFailed(state, action) {
+      state.isLoading = false;
+      state.error = action.payload;
     },
   },
 });
@@ -23,6 +33,13 @@ export const blogCategoriesReducer = blogCategoriesSlice.reducer;
 export const blogCategoriesActions = blogCategoriesSlice.actions;
 
 export const getCategoryPostsAsync = (category) => async (dispatch) => {
-  const posts = await getCategoryPosts(category);
-  dispatch(blogCategoriesActions.getCategoryPosts({ category, posts }));
+  try {
+    dispatch(blogCategoriesActions.getCategoryPostsStart());
+    const posts = await getCategoryPosts(category);
+    dispatch(
+      blogCategoriesActions.getCategoryPostsSuccess({ category, posts })
+    );
+  } catch (error) {
+    dispatch(blogCategoriesActions.getCategoryPostsFailed(error));
+  }
 };

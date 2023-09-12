@@ -12,8 +12,9 @@ const LABELS = ["فيزياء", "كيمياء", "رياضيات", "الكترو�
 
 const Blog = () => {
   const dispatch = useDispatch();
-  const categories = useSelector(selectBlogCategories);
+  // const categories = useSelector(selectBlogCategories);
   const blogCategoriesPosts = useSelector(selectBlogCategoriesPosts);
+  const isLoading = useSelector((state) => state.blogCategories.isLoading);
   const posts = blogCategoriesPosts["كيمياء"] || [];
   useEffect(() => {
     if (posts.length > 0) return;
@@ -34,7 +35,7 @@ const Blog = () => {
             );
           })}
         </ul>
-        <PostsPreview posts={posts} />
+        <PostsPreview posts={posts} isLoading={isLoading} />
       </section>
     </>
   );
