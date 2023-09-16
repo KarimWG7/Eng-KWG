@@ -12,6 +12,7 @@ import Notification from "./components/notification/notification";
 import { useSelector } from "react-redux";
 import BlogRedirect from "./components/blog-redirect/blogRedirect.component";
 import NotFound from "./components/not-found 404/not-found-404.component";
+import Resume from "./routes/resume/resume.component";
 
 const App = () => {
   const [isNavOpened, setIsNavOpened] = useState(true);
@@ -34,6 +35,7 @@ const App = () => {
             </Route>
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="resume" element={<Resume />} />
             <Route path="/not-found" element={<NotFound />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

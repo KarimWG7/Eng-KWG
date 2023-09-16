@@ -8,7 +8,6 @@ const PostDetail = () => {
   const { data, error, isFetching, isError } = useGetPostByIdQuery(
     params.postId
   );
-  console.log(data);
 
   return isFetching ? <Spinner /> : <PostPreview post={data} />;
 };

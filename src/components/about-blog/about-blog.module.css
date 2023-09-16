@@ -7,7 +7,9 @@
     padding-top: 10rem;
     text-align: center;
     position: relative;
-    background-color: var(--bg-color);
+    background-image: url("../../assets/bg2.jpg");
+    background-size: cover;
+    box-shadow: 0 10px 20px rgba(0,0,0, 0.5);
 }
 
 .logo-container {
@@ -24,10 +26,17 @@
 .logo-container img {
     width: 100%;
 }
+.textBox {
+    backdrop-filter: blur(10px);
+    width: fit-content;
+    margin: auto;
+    padding: 0.5rem 2rem;
+    box-shadow: 0 10px 10px rgba(0,0,0, 0.2);
+    border-radius: 10px;
+}
 .about-blog h1 {
     font-size: 3.6rem;
 }
 .about-blog p {
-    margin: 1rem;
     font-size: 1.6rem;
 }
