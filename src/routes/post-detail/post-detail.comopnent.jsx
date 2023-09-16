@@ -1,19 +1,16 @@
-import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PostPreview from "../../components/post-preview/post-preview.component";
-import { getPostById } from "../../utils/blogger";
+import { useGetPostByIdQuery } from "../../store/boggerApi/bloggerApi";
+import Spinner from "../../components/spinner/spinner.component";
 
 const PostDetail = () => {
-  const [post, setPost] = useState({ content: "" });
   const params = useParams();
-  useEffect(() => {
-    const getPost = async () => {
-      const post = await getPostById(params.postId);
-      setPost(post);
-    };
-    getPost();
-  }, []);
-  return <PostPreview post={post} />;
+  const { data, error, isFetching, isError } = useGetPostByIdQuery(
+    params.postId
+  );
+  console.log(data);
+
+  return isFetching ? <Spinner /> : <PostPreview post={data} />;
 };
 
 export default PostDetail;

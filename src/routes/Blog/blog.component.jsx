@@ -7,38 +7,39 @@ import {
   selectBlogCategoriesPosts,
 } from "../../store/blogCategoriesSlice/blogCatgeories.selector";
 import { getCategoryPostsAsync } from "../../store/blogCategoriesSlice/blogCategories.reducer";
+import { NavLink, Navigate, useNavigate, useParams } from "react-router-dom";
+import CategoryPreview from "../../components/category-preview/category-preview.component";
 
 const LABELS = ["فيزياء", "كيمياء", "رياضيات", "الكترونيات"];
 
 const Blog = () => {
-  const dispatch = useDispatch();
-  // const categories = useSelector(selectBlogCategories);
-  const blogCategoriesPosts = useSelector(selectBlogCategoriesPosts);
-  const isLoading = useSelector((state) => state.blogCategories.isLoading);
-  const posts = blogCategoriesPosts["كيمياء"] || [];
-  useEffect(() => {
-    if (posts.length > 0) return;
-    dispatch(getCategoryPostsAsync("كيمياء"));
-  }, []);
+  const params = useParams();
+  if (!LABELS.includes(params.category)) {
+    return <Navigate to="/not-found" />;
+  }
+
   return (
     <>
       <section>
         <ul className={classes.classification}>
           {LABELS.map((label) => {
             return (
-              <li
-                className={label === "كيمياء" ? classes.active : ""}
+              <NavLink
+                to={"/blog/" + label}
+                className={({ isActive }) =>
+                  isActive ? classes.active : undefined
+                }
                 key={label}
               >
-                <button>{label}</button>
-              </li>
+                <li>{label}</li>
+              </NavLink>
             );
           })}
         </ul>
-        <PostsPreview posts={posts} isLoading={isLoading} />
+        <CategoryPreview category={params.category} />
       </section>
     </>
   );
 };
-
+ 
 export default Blog;

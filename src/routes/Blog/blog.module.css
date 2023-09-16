@@ -6,14 +6,14 @@
     margin-bottom: 5rem;
 }
 
-.classification li {
+.classification a {
     z-index: 10;
     padding: 0.5rem 1rem;
     background-color: #eee;
     border-bottom: 2px solid transparent;
     transition: border 0.3s ease;
 }
-.classification li:hover, .classification li.active {
+.classification a:hover, .classification a.active {
     border-bottom-color: var(--main-color);
 }
 

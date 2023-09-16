@@ -29,7 +29,7 @@ const Navigation = () => {
             </Link>
           </li>
           <li>
-            <Link className={classes["nav-link"]} to="/blog">
+            <Link className={classes["nav-link"]} to="/blog/كيمياء">
               <BiPencil className={classes["nav-icon"]} />
               <span>Blog</span>
             </Link>
