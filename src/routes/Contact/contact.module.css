@@ -1,10 +1,76 @@
-/* .contact-page {
+.contact-page {
+    max-width: 70rem;
     margin: 0 auto;
-} */
+}
+.social {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    height: fit-content;
+    gap: 3rem;
+    background-color: var(--bg-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0, 0.2) ;
+    margin: 5rem auto;
+}
 
+.social li {
+    border-radius: 10px;
+    width: 18rem;
+    height: 18rem;
+    flex-grow: 1;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 0 1px #cccccc ;
+    transition: all 0.3s ease;
+}
+.social li:hover {
+    box-shadow: 0 10px 15px rgba(0,0,0, 0.5), inset 5px 5px 10px #eee, inset -3px -3px 10px rgba(0,0,0, 0.5) ;
+}
+.social li:first-child{
+    background-image: url("https://th.bing.com/th/id/OIP.4Uy4rET9AdaqesbdtHvq3QHaHa?pid=ImgDet&rs=1");
+}
+.social li:nth-child(2){
+    background-image: url("https://th.bing.com/th/id/OIP.X1ah84vxHo0S1xjox1-SGwHaFj?w=222&h=180&c=7&r=0&o=5&pid=1.7");
+}
+.social li:nth-child(3){
+    background-image: url("https://th.bing.com/th/id/OIP.Sfgbqcg35rCru0YB-IQwxgHaD4?w=324&h=180&c=7&r=0&o=5&pid=1.7");
+}
+.social li:nth-child(4){
+background-image: url("https://th.bing.com/th/id/OIP.vEB1lJiZpJgTwClI_YnTFwAAAA?w=180&h=180&c=7&r=0&o=5&pid=1.7");
+}
+.social li:last-child{
+    background-image: url("https://th.bing.com/th/id/OIP.l86P2RS9aC-KX-J40tfK5wHaDn?pid=ImgDet&rs=1");
+}
+.social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 4.8rem;
+    backdrop-filter: grayscale(1) ;
+    transition: all 0.3s ease;
+    background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.8) 0%, transparent 100%);
+    
+}
+.social a:hover {
+    opacity: 0;
+    backdrop-filter: grayscale(0);
+}
+.social .mostaql {
+    display: block;
+    width: 4rem;
+    aspect-ratio: 1/1;
+    border: 8px solid var(--main-color);
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+}
+.social .icon {
+}
 .contact-form {
     margin: 0 auto;
-    max-width: 60rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;

@@ -1,13 +1,13 @@
 import React from "react";
 import classes from "./error.module.css";
-import { Link } from "react-router-dom";
+import Button from "../button/button.component";
 
-const Error = ({ error }) => {
+const Error = ({ error, refetch }) => {
   return (
     <section className={classes.error}>
       <span>{error.status}</span>
       <p>{error.error}</p>
-      <Link to="">Home</Link>
+      <Button onClick={() => refetch()}>Reresh</Button>
     </section>
   );
 };

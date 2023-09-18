@@ -35,7 +35,12 @@ export const bloggerApi = createApi({
     }),
     getPostById: builder.query({
       query: (id) => {
-        return `/posts/${id}?key=` + apiKey;
+        let url = `/posts/${id}?`;
+        const params = {
+          key: apiKey,
+          fetchImages: true,
+        };
+        return url + new URLSearchParams(params);
       },
     }),
   }),

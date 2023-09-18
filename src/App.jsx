@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navigation from "./components/navigation/navigation.component";
 import Home from "./routes/Home/Home.component";
-import { Outlet, Route, Routes, Redirect } from "react-router-dom";
+import { Outlet, Route, Routes } from "react-router-dom";
 import PostDetail from "./routes/post-detail/post-detail.comopnent";
 import Blog from "./routes/Blog/blog.component";
 import About from "./routes/About/about.component";

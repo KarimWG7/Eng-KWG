@@ -1,24 +1,24 @@
 .classification {
     display: flex;
-    justify-content: space-between;
-    max-width: 60rem;
-    margin: auto;
-    margin-bottom: 5rem;
+    justify-content: space-around;
+    background-color: var(--main-color);
+    max-width: 70rem;
+    color: var(--bg-color);
+    margin: 8rem auto 5rem;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
 }
 
 .classification a {
-    /* z-index: 10; */
     padding: 0.5rem 1rem;
-    background-color: #eee;
+    font-size: 2rem;
     border-bottom: 2px solid transparent;
-    transition: border 0.3s ease;
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
 .classification a:hover, .classification a.active {
-    border-bottom-color: var(--main-color);
+    background-color: var(--bg-color);
+    color: var(--main-color);
 }
 
-.classification li button {
-    font-size: 2rem;
-    color: var(--main-color);
-    position: relative;
-}

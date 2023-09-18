@@ -8,6 +8,7 @@ import { BsSun } from "react-icons/bs";
 import { RiMenuFoldLine } from "react-icons/ri";
 import { RiMenuUnfoldLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import logo from "../../assets/8.png";
 
 const Header = ({ setIsNavOpen, isNavOpen }) => {
   const navClickHadler = () => {
@@ -17,37 +18,55 @@ const Header = ({ setIsNavOpen, isNavOpen }) => {
   };
   return (
     <header className={classes.header}>
-      <Link className={classes.ctab} to="/contact">Hire Me</Link>
+      <Link className={classes.ctab} to="/contact">
+        Hire Me
+      </Link>
       <ul className={classes.social}>
         <li>
-          <a target="_blank" href="https://mostaql.com/u/karim_ghanim">
+          <a
+            target="_blank"
+            href="https://mostaql.com/u/karim_ghanim"
+            rel="noreferrer"
+          >
             <span className={classes.mostaql}></span>
           </a>
         </li>
         <li>
-          <a target="_blank" href="www.linkedin.com/in/karim-ghanem-99b805228">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="www.linkedin.com/in/karim-ghanem-99b805228"
+          >
             <BiLogoLinkedin />
           </a>
         </li>
         <li>
-          <a target="_blank" href="https://github.com/KarimWG7">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/KarimWG7"
+          >
             <BiLogoGithub />
           </a>
         </li>
         <li>
-          <a target="_blank" href="https://codepen.io/Karimwg">
+          <a target="_blank" rel="noreferrer" href="https://codepen.io/Karimwg">
             <BiLogoCodepen />
           </a>
         </li>
         <li>
           <a
             target="_blank"
+            rel="noreferrer"
             href="https://www.upwork.com/freelancers/~011e4d04eabb6768a5"
           >
             <SiUpwork />
           </a>
         </li>
       </ul>
+      <Link className={classes.logoContainer} to="/">
+        <img src={logo} alt="" />
+      </Link>
       <div className={classes["toggle-options"]}>
         <span>
           <BsSun />

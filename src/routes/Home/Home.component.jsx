@@ -5,13 +5,13 @@ import PostsPreview from "../../components/posts-preview/posts-preview.component
 import { useGetLatestPostsQuery } from "../../store/boggerApi/bloggerApi";
 
 const Home = () => {
-  const { data, isError, isFetching, error } = useGetLatestPostsQuery();
-  console.log(error);
+  const { data, isError, isFetching, error, refetch } =
+    useGetLatestPostsQuery();
   return (
     <section className="container">
       <AboutBlog />
       {isError ? (
-        <Error error={error} />
+        <Error error={error} refetch={refetch} />
       ) : (
         <PostsPreview posts={data?.items} isLoading={isFetching} />
       )}

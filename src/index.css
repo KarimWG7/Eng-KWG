@@ -1,5 +1,6 @@
 :root {
---main-color: hsl(209, 77%, 23%);
+--main-color: #0d3c68;
+/* --main-color: #18b113; */
 --main-color-dark: #082744;
 /* --bg-color: #fffae8; */
 --bg-color: #fff;
