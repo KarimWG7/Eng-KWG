@@ -33,6 +33,15 @@ const Contact = () => {
           <a
             target="_blank"
             rel="noreferrer"
+            href="https://www.upwork.com/freelancers/~011e4d04eabb6768a5"
+          >
+            <SiUpwork className={classes.icon} />
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noreferrer"
             href="https://github.com/KarimWG7"
           >
             <BiLogoGithub className={classes.icon} />
@@ -43,19 +52,10 @@ const Contact = () => {
             <BiLogoCodepen className={classes.icon} />
           </a>
         </li>
-        <li>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://www.upwork.com/freelancers/~011e4d04eabb6768a5"
-          >
-            <SiUpwork className={classes.icon} />
-          </a>
-        </li>
       </ul>
       <form className={classes["contact-form"]}>
+        <input id="name" type="text" placeholder="Your Full Name" />
         <input id="email" type="email" placeholder="Your Email" />
-        <input id="name" type="text" placeholder="Your Name" />
         <textarea id="message" placeholder="Your Message" />
         <Button type="submit">Send</Button>
       </form>

@@ -2,18 +2,23 @@
     margin: 13rem auto 5rem;
     max-width: 100rem;
     position: relative;
-    height: 20rem;
+    min-height: 20rem;
+    height: fit-content;
     border-radius: 10px;
     padding-top: 10rem;
+    padding-bottom: 2rem;
     text-align: center;
     position: relative;
+    background-color: var(--bg-color);
     background-image: url("../../assets/bg2.jpg");
+    background-blend-mode: multiply;
     background-size: cover;
     box-shadow: 0 10px 20px rgba(0,0,0, 0.5);
 }
 
 .logo-container {
     width: 15rem;
+    aspect-ratio: 1/1;
     border-radius: 20px;
     border: 5px solid var(--bg-color);
     overflow: hidden;
@@ -27,9 +32,9 @@
     width: 100%;
 }
 .textBox {
-    backdrop-filter: blur(10px);
+    background-color: var(--bg-color);
     width: fit-content;
-    margin: auto;
+    margin:  auto ;
     padding: 0.5rem 2rem;
     box-shadow: 0 10px 10px rgba(0,0,0, 0.2);
     border-radius: 10px;
@@ -39,4 +44,9 @@
 }
 .about-blog p {
     font-size: 1.6rem;
+}
+@media (max-width:500px ) {
+    .about-blog {
+        margin: 10rem auto 5rem;
+    }
 }

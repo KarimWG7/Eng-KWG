@@ -6,15 +6,16 @@
     position: relative;
     font-size: 1.6rem;
     line-height: 1.7;
-    color: #333;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 2rem auto 7rem;
+    color: var(--main-color) !important;
+    font-family: 'Cairo', sans-serif !important;
 }
 .PostPreview p , .PostPreview span {
     font-size: 1.6rem;
     line-height: 1.7;
-
+    font-family: 'Cairo', sans-serif !important;
+    color: var(--main-color) !important;
 }
 .PostPreview a {
     font-size: 1.6rem;
@@ -28,7 +29,7 @@
     font-size: 3.2rem;
     font-weight: bold;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color:var(--bg-color);
     box-shadow: 0 0 15px rgba(0,0,0, 0.7);
     padding: 1rem;
     border-radius: 10px;

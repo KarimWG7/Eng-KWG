@@ -22,9 +22,9 @@ const App = () => {
     <>
       {notification.message && <Notification notification={notification} />}
       <div className="app">
+        <Header setIsNavOpen={setIsNavOpened} isNavOpen={isNavOpened} />
+        {isNavOpened && <Navigation isNavOpened={isNavOpened} />}
         <main className="container">
-          <Header setIsNavOpen={setIsNavOpened} isNavOpen={isNavOpened} />
-          {isNavOpened && <Navigation isNavOpened={isNavOpened} />}
           <Routes>
             <Route index element={<Home />} />
             <Route path="posts/:postId" element={<PostDetail />} />

@@ -1,14 +1,12 @@
 :root {
 --main-color: #0d3c68;
-/* --main-color: #18b113; */
 --main-color-dark: #082744;
-/* --bg-color: #fffae8; */
 --bg-color: #fff;
---btn-color: #32cafd;
-/* --btn-color: #f95738; */
---btn-color-dark: #e74828;
---shadow: rgba(13, 59, 102, 0.3);
-
+--app-color: #eee;
+/* --main-color: #fff;
+--main-color-dark: #eee;
+--bg-color: #0d3c68;
+--app-color: #082744; */
 }
 
 * {
@@ -21,16 +19,13 @@
 html {
   font-size: 62.5%
 }
- 
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;400;600&family=K2D:wght@100;300;600&display=swap');
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  max-width: 100vw;
+  font-family: 'K2D', sans-serif;  max-width: 100vw;
+  font-family: 'Cairo', sans-serif;
   color: var(--main-color);
-  background-color: #eee;
+  background-color: var(--app-color);
   overflow-x: hidden;
 }
 
@@ -47,8 +42,9 @@ a {
   display: none;
 }
 .container  {
-  max-width: 100rem;
+  max-width: 90rem;
   margin: auto;
+  padding: 0 1rem;
 }
 button {
   border: none;

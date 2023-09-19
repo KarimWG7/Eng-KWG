@@ -4,7 +4,7 @@ import CategoryPreview from "../../components/category-preview/category-preview.
 
 import classes from "./blog.module.css";
 
-const LABELS = ["فيزياء", "كيمياء", "رياضيات", "الكترونيات"];
+const LABELS = ["فيزياء", "كيمياء"];
 
 const Blog = () => {
   const params = useParams();

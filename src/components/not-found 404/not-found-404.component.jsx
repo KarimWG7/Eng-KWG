@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./not-found.module.css";
 import image_404 from "./404.png";
 import { Link } from "react-router-dom";
+import Button from "../button/button.component";
 
 const NotFound = () => {
   return (
@@ -10,7 +11,9 @@ const NotFound = () => {
       <p>
         The page you currently asking for is <span>Not Found</span>
       </p>
-      <Link to="/">Home</Link>
+      <Link to="/">
+        <Button>Home</Button>
+      </Link>
     </section>
   );
 };

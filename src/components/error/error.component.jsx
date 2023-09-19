@@ -7,7 +7,7 @@ const Error = ({ error, refetch }) => {
     <section className={classes.error}>
       <span>{error.status}</span>
       <p>{error.error}</p>
-      <Button onClick={() => refetch()}>Reresh</Button>
+      <Button onClick={() => refetch()}>Refresh</Button>
     </section>
   );
 };

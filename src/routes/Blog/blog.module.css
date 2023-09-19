@@ -1,6 +1,6 @@
 .classification {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     background-color: var(--main-color);
     max-width: 70rem;
     color: var(--bg-color);
@@ -22,3 +22,12 @@
     color: var(--main-color);
 }
 
+@media (max-width: 600px) {
+    .classification  {
+        margin: 3rem auto 2rem;
+    }
+    .classification a {
+        font-size: 1.6rem;
+
+    }
+}

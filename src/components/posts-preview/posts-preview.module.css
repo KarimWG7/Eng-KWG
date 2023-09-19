@@ -11,3 +11,8 @@
 .posts-container .spinner{
     grid-column: 1/4 ;
 }
+@media (max-width: 350px) {
+    .posts-container {
+        grid-template-columns: repeat(auto-fill, minmax(20rem , 1fr));
+    }
+}
