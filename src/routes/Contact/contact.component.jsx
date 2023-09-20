@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+
 import classes from "./contact.module.css";
 import { BiLogoLinkedin } from "react-icons/bi";
 import { BiLogoGithub } from "react-icons/bi";
@@ -6,8 +8,22 @@ import { BiLogoCodepen } from "react-icons/bi";
 import { SiUpwork } from "react-icons/si";
 
 import Button from "../../components/button/button.component";
+import { conditionalExpression } from "@babel/types";
 
 const Contact = () => {
+  const formInputRef = useRef();
+
+  const formSubmitHandler = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_5el1w1j",
+      "template_uk3bkvc",
+      formInputRef.current,
+      "r0SEYjzeyF9-h_xyX"
+    );
+    e.target.reset();
+  };
   return (
     <section className={classes["contact-page"]}>
       <ul className={classes.social}>
@@ -53,14 +69,35 @@ const Contact = () => {
           </a>
         </li>
       </ul>
-      <form className={classes["contact-form"]}>
-        <input id="name" type="text" placeholder="Your Full Name" />
-        <input id="email" type="email" placeholder="Your Email" />
-        <textarea id="message" placeholder="Your Message" />
-        <Button type="submit">Send</Button>
+      <form
+        className={classes["contact-form"]}
+        onSubmit={formSubmitHandler}
+        ref={formInputRef}
+      >
+        <input
+          id="name"
+          type="text"
+          placeholder="Your Full Name"
+          name="name"
+          required
+        />
+        <input
+          id="email"
+          type="email"
+          placeholder="Your Email"
+          name="email"
+          required
+        />
+        <textarea
+          id="message"
+          placeholder="Your Message"
+          required
+          name="message"
+        />
+        <Button type="submit">Send Message</Button>
       </form>
     </section>
   );
 };
 
-export default Contact
+export default Contact;

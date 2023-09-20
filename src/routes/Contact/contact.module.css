@@ -95,5 +95,10 @@ background-image: url("https://th.bing.com/th/id/OIP.51qffxU8CG3qYqX63YHpgwHaD4?
 }
 .contact-form button {
     padding: 1rem 3rem;
-    align-self: stretch;
+    align-self: flex-start;
+}
+@media(max-width: 500px) {
+    .contact-form button {
+        align-self: stretch;
+    }
 }

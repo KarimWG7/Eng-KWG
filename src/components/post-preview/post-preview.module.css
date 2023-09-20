@@ -16,6 +16,7 @@
     line-height: 1.7;
     font-family: 'Cairo', sans-serif !important;
     color: var(--main-color) !important;
+    background-color: var(--bg-color) !important;
 }
 .PostPreview a {
     font-size: 1.6rem;

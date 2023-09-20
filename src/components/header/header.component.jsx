@@ -1,21 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./header.module.css";
 import { BiLogoLinkedin } from "react-icons/bi";
 import { BiLogoGithub } from "react-icons/bi";
 import { BiLogoCodepen } from "react-icons/bi";
 import { SiUpwork } from "react-icons/si";
 import { BsSun } from "react-icons/bs";
+import { BsMoon } from "react-icons/bs";
 import { RiMenuFoldLine } from "react-icons/ri";
 import { RiMenuUnfoldLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import logo from "../../assets/8.png";
 
 const Header = ({ setIsNavOpen, isNavOpen }) => {
+  const [isDark, setIsDark] = useState(false);
+  useEffect(() => {
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+    if (prefersDarkScheme.matches) setIsDark(true);
+  }, []);
+  useEffect(() => {
+    if (isDark) {
+      document.body.classList.add("dark-theme");
+    } else {
+      document.body.classList.remove("dark-theme");
+    }
+  }, [isDark]);
+
   const navClickHadler = () => {
     setIsNavOpen((prevState) => {
       return !prevState;
     });
   };
+
+  const themeToggleHandler = () => {
+    setIsDark((prev) => {
+      return !prev;
+    });
+  };
+
   return (
     <header className={classes.header}>
       <Link className={classes.ctab} to="/contact">
@@ -68,12 +89,12 @@ const Header = ({ setIsNavOpen, isNavOpen }) => {
         <img src={logo} alt="" />
       </Link>
       <div className={classes["toggle-options"]}>
-        <span>
-          <BsSun />
-        </span>
-        <span onClick={navClickHadler}>
+        <button onClick={themeToggleHandler}>
+          {isDark ? <BsMoon /> : <BsSun />}
+        </button>
+        <button onClick={navClickHadler}>
           {isNavOpen ? <RiMenuFoldLine /> : <RiMenuUnfoldLine />}
-        </span>
+        </button>
       </div>
     </header>
   );
