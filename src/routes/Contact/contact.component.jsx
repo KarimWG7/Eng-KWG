@@ -8,7 +8,6 @@ import { BiLogoCodepen } from "react-icons/bi";
 import { SiUpwork } from "react-icons/si";
 
 import Button from "../../components/button/button.component";
-import { conditionalExpression } from "@babel/types";
 
 const Contact = () => {
   const formInputRef = useRef();
@@ -17,10 +16,10 @@ const Contact = () => {
     e.preventDefault();
 
     emailjs.sendForm(
-      "service_5el1w1j",
-      "template_uk3bkvc",
+      procces.env.REACT_APP_EMAILJS_SERVICE_ID,
+      procces.env.REACT_APP_EMAILJS_TEMPLATE_ID,
       formInputRef.current,
-      "r0SEYjzeyF9-h_xyX"
+      procces.env.REACT_APP_EMAILJS_PUPLIC_KEY
     );
     e.target.reset();
   };
