@@ -1,4 +1,5 @@
 import React from "react";
+import { AnimatePresence } from "framer-motion";
 
 import PostCard from "../post-card/post-card.component";
 import classes from "./posts-preview.module.css";
@@ -11,7 +12,11 @@ const PostsPreview = ({ posts, isLoading }) => {
         <Spinner className={classes.spinner} />
       ) : (
         posts.map((post) => {
-          return <PostCard key={post.id} post={post} />;
+          return (
+            <AnimatePresence mode="wait">
+              <PostCard key={post.id} post={post} />
+            </AnimatePresence>
+          );
         })
       )}
     </ul>

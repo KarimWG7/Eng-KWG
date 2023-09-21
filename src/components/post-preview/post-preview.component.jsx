@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import classes from "./post-preview.module.css";
 import { Navigate } from "react-router-dom";
@@ -8,7 +9,7 @@ const PostPreview = ({ post }) => {
     return <Navigate to="/not-found" />;
   }
   return (
-    <section className={classes.PostPreview}>
+    <motion.section layout className={classes.PostPreview}>
       <img
         src={post.images[0].url}
         alt="the post "
@@ -19,7 +20,7 @@ const PostPreview = ({ post }) => {
         className={classes.content}
         dangerouslySetInnerHTML={{ __html: post.content }}
       ></div>
-    </section>
+    </motion.section>
   );
 };
 
