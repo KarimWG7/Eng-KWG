@@ -39,7 +39,7 @@ const Contact = () => {
           <a
             target="_blank"
             rel="noreferrer"
-            href="www.linkedin.com/in/karim-ghanem-99b805228"
+            href="https://www.linkedin.com/in/karim-ghanem-99b805228/"
           >
             <BiLogoLinkedin className={classes.icon} />
           </a>

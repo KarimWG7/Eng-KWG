@@ -1,0 +1,15 @@
+.resume {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+    flex-direction: column;
+}
+.resume h1 {
+    font-size: 3.6rem;
+    color: var(--main-color);
+}
+.resume img {
+    max-width: 512px;
+}

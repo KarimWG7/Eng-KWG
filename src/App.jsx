@@ -2,28 +2,27 @@ import React, { useState } from "react";
 import Navigation from "./components/navigation/navigation.component";
 import Home from "./routes/Home/Home.component";
 import { Outlet, Route, Routes } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import PostDetail from "./routes/post-detail/post-detail.comopnent";
 import Blog from "./routes/Blog/blog.component";
 import About from "./routes/About/about.component";
 import Contact from "./routes/Contact/contact.component";
 import Header from "./components/header/header.component";
 import "./app.css";
-import Notification from "./components/notification/notification";
-import { useSelector } from "react-redux";
 import BlogRedirect from "./components/blog-redirect/blogRedirect.component";
 import NotFound from "./components/not-found 404/not-found-404.component";
 import Resume from "./routes/resume/resume.component";
 
 const App = () => {
   const [isNavOpened, setIsNavOpened] = useState(true);
-  const notification = useSelector((state) => state.notification);
 
   return (
     <>
-      {notification.message && <Notification notification={notification} />}
       <div className="app">
         <Header setIsNavOpen={setIsNavOpened} isNavOpen={isNavOpened} />
-        {isNavOpened && <Navigation isNavOpened={isNavOpened} />}
+        <AnimatePresence>
+          {isNavOpened && <Navigation isNavOpened={isNavOpened} />}
+        </AnimatePresence>
         <main className="container">
           <Routes>
             <Route index element={<Home />} />
